@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for backend-ex-test on 2024-06-16T14:10:23-07:00
+# fly.toml app configuration file generated for backend-ex-test-dekai on 2024-06-19T09:49:35-07:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'backend-ex-test'
+app = 'backend-ex-test-dekai'
 primary_region = 'sea'
 console_command = '/code/manage.py shell'
 
@@ -13,12 +13,12 @@ console_command = '/code/manage.py shell'
   release_command = 'python manage.py migrate --noinput'
 
 [env]
-  CSRF = "https://*.fly.dev"
-  EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-  ENVIRONMENT = "TEST"
-  PORT = "8000"
-  ROOT = "https://backend-ex-test.fly.dev/"
-  HOST = "backend-ex-test.fly.dev"
+  CSRF = 'https://*.fly.dev'
+  EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+  ENVIRONMENT = 'TEST'
+  HOST = 'backend-ex-test-dekai.fly.dev'
+  PORT = '8000'
+  ROOT = 'https://backend-ex-test-dekai.fly.dev/'
 
 [http_service]
   internal_port = 8000
