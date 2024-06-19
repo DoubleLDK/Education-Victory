@@ -15,7 +15,7 @@ console_command = '/code/manage.py shell'
 [env]
   CSRF = 'https://*.fly.dev'
   EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-  ENVIRONMENT = 'TEST'
+  ENVIRONMENT = 'PRODUCTION'
   HOST = 'backend-ex-test-dekai.fly.dev'
   PORT = '8000'
   ROOT = 'https://backend-ex-test-dekai.fly.dev/'
