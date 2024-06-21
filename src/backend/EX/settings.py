@@ -45,6 +45,7 @@ elif ENVIRONMENT in ('TEST', 'PRODUCTION'):
     else:
         DEBUG = False
         SECRET_KEY = os.getenv('SECRET_KEY')
+        0/0
         if not SECRET_KEY:
             raise ValueError("SECRET_KEY is not set in the environment variables.")
         EMAIL_BACKEND = os.getenv('EMAIL_BACKEND')
