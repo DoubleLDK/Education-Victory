@@ -45,6 +45,8 @@ elif ENVIRONMENT in ('TEST', 'PRODUCTION'):
     else:
         DEBUG = False
         SECRET_KEY = os.getenv('SECRET_KEY')
+        if not SECRET_KEY:
+            raise ValueError("SECRET_KEY is not set in the environment variables.")
         EMAIL_BACKEND = os.getenv('EMAIL_BACKEND')
     ROOT = os.getenv('ROOT')
     STATIC_ROOT = os.path.join(STATIC_DIR, 'static')
