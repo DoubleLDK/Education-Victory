@@ -20,7 +20,7 @@ DEFAULT_DIR = Path(__file__).resolve().parent
 STATIC_DIR = Path(__file__).resolve().parent.parent.parent
 
 ENVIRONMENT = os.getenv('ENVIRONMENT')
-
+# ENVIRONMENT = 'TEST'
 
 if ENVIRONMENT == 'LOCAL':
 
@@ -52,13 +52,15 @@ elif ENVIRONMENT in ('TEST', 'PRODUCTION'):
     STATIC_ROOT = os.path.join(STATIC_DIR, 'static')
     ALLOWED_HOSTS = [os.getenv('HOST')]
     CSRF_TRUSTED_ORIGINS = [os.getenv('CSRF')]
-    DATABASES = {
-        'default': dj_database_url.parse(
-            os.getenv('DATABASE_URL'),
-            conn_max_age=600,
-            conn_health_checks=True,
-            )
-    }
+    # print('-'*20)
+    # print(os.getenv('DATABASE_URL'))
+    # DATABASES = {
+    #     'default': dj_database_url.parse(
+    #         os.getenv('DATABASE_URL'),
+    #         conn_max_age=600,
+    #         conn_health_checks=True,
+    #         )
+    # }
     STATIC_URL = 'https://cdn.jsdelivr.net/gh/Education-Victory/Education-Victory/src/static/'
 
 
