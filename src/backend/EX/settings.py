@@ -21,7 +21,9 @@ STATIC_DIR = Path(__file__).resolve().parent.parent.parent
 
 ENVIRONMENT = os.getenv('ENVIRONMENT')
 
+
 if ENVIRONMENT == 'LOCAL':
+
     DEBUG = True
     ROOT = 'http://127.0.0.1:8000'
     ALLOWED_HOSTS = ['localhost', '127.0.0.1']
@@ -45,10 +47,6 @@ elif ENVIRONMENT in ('TEST', 'PRODUCTION'):
     else:
         DEBUG = False
         SECRET_KEY = os.getenv('SECRET_KEY')
-        print(SECRET_KEY)
-        0/0
-        if not SECRET_KEY:
-            raise ValueError("SECRET_KEY is not set in the environment variables.")
         EMAIL_BACKEND = os.getenv('EMAIL_BACKEND')
     ROOT = os.getenv('ROOT')
     STATIC_ROOT = os.path.join(STATIC_DIR, 'static')
