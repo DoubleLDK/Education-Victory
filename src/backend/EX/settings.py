@@ -61,6 +61,14 @@ elif ENVIRONMENT in ('TEST', 'PRODUCTION'):
     #         conn_health_checks=True,
     #         )
     # }
+    DATABASES = {
+        'default': {
+            **dj_database_url.parse(os.getenv('DATABASE_URL', 'postgres://backend_ex_test_dekai:P0E7gQE61ruW2FV@backend-ex-test-db-dekai.flycast:5432/backend_ex_test_dekai?sslmode=disable')),
+            'ENGINE': 'django.db.backends.postgresql',  # 明确指定使用 PostgreSQL
+            'CONN_MAX_AGE': 600,
+            'CONN_HEALTH_CHECKS': True,
+        }
+    }
     STATIC_URL = 'https://cdn.jsdelivr.net/gh/Education-Victory/Education-Victory/src/static/'
 
 
