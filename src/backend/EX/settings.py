@@ -56,14 +56,16 @@ elif ENVIRONMENT in ('TEST', 'PRODUCTION'):
     # print(os.getenv('DATABASE_URL'))
     # DATABASES = {
     #     'default': dj_database_url.parse(
-    #         os.getenv('DATABASE_URL'),
+    #         os.getenv('DATABASE_URL', 'postgres://backend_ex_test_dekai:P0E7gQE61ruW2FV@backend-ex-test-db-dekai.flycast:5432/backend_ex_test_dekai?sslmode=disable'),
     #         conn_max_age=600,
     #         conn_health_checks=True,
-    #         )
+    #         ),
+    #     'ENGINE': 'django.db.backends.postgresql',
     # }
+
     DATABASES = {
         'default': {
-            **dj_database_url.parse(os.getenv('DATABASE_URL', 'postgres://backend_ex_test_dekai:P0E7gQE61ruW2FV@backend-ex-test-db-dekai.flycast:5432/backend_ex_test_dekai?sslmode=disable')),
+            **dj_database_url.parse('postgres://backend_ex_test_dekai:P0E7gQE61ruW2FV@backend-ex-test-db-dekai.flycast:5432/backend_ex_test_dekai?sslmode=disable'),
             'ENGINE': 'django.db.backends.postgresql',  # 明确指定使用 PostgreSQL
             'CONN_MAX_AGE': 600,
             'CONN_HEALTH_CHECKS': True,
