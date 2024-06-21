@@ -7,9 +7,8 @@ on:
     branches:
 
 env:
-  FLY_API_TOKEN: ${{ secrets.FLY_TOKEN }}
-  DATABASE_URL: ${{ secrets.DATABASE_URL }}
-  
+  ENVIRONMENT: LOCAL
+
 jobs:
   build:
     runs-on: ubuntu-latest
